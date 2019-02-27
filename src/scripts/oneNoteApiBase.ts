@@ -94,12 +94,12 @@ export class OneNoteApiBase {
 		if (this.oneNoteApiHostOverride) {
 			apiHost = this.oneNoteApiHostOverride;
 		} else {
-			apiHost = "https://www.onenote.com";
+			apiHost = "https://graph.microsoft.com";
 		}
 
 		let apiVersionPortion = "";
 		if (!urlContainsVersion) {
-			apiVersionPortion = this.useBetaApi ? "/api/beta" : "/api/v1.0";
+			apiVersionPortion = this.useBetaApi ? "/v1.0/me/onenote" : "/v1.0/me/onenote";
 		}
 		return apiHost + apiVersionPortion;
 	}
